@@ -6,7 +6,7 @@ import  Task  from './components/Task';
 export default function App() {
   const [task , setTask] = useState();
   const [taskitems , setTaskItems] = useState([]);
-  // what is up bantai trying to change
+  // gg
 
   const handleaddtask = () => {
     console.log(task);
