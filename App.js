@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React , {useState} from 'react';
 import { Platform, StyleSheet, Text, TextInput, View ,KeyboardAvoidingView , TouchableOpacity, Keyboard} from 'react-native';
 import  Task  from './components/Task';
+import Login from '/Login';
 
 export default function App() {
   const [task , setTask] = useState();
@@ -33,45 +34,49 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <View style={styles.tasksWrapper}>
-        <Text style = {styles.sectionTitle}>Today's Task</Text>
+    
+    <View>
+      <Login text={'hello'}></Login>
+    </View>
+    // <View style={styles.container}>
+    //   <View style={styles.tasksWrapper}>
+    //     <Text style = {styles.sectionTitle}>Today's Task</Text>
       
-        <View style={styles.items}>
-          {
-          taskitems.map((item,index) => {
-            return(
+    //     <View style={styles.items}>
+    //       {
+    //       taskitems.map((item,index) => {
+    //         return(
 
             
-            <TouchableOpacity key = {index} onPress={() => taskdelete(index)}>
+    //         <TouchableOpacity key = {index} onPress={() => taskdelete(index)}>
 
-            <Task  text= {item}></Task>
-            </TouchableOpacity> 
-            )
+    //         <Task  text= {item}></Task>
+    //         </TouchableOpacity> 
+    //         )
             
-          })
-          } 
-        </View>
-      </View>
-      <KeyboardAvoidingView
-      behaviour={Platform.OS==='ios'?"padding":"height"}
-      style={styles.writeTasksWrapper}>
+    //       })
+    //       } 
+    //     </View>
+    //   </View>
+    //   <KeyboardAvoidingView
+    //   behaviour={Platform.OS==='ios'?"padding":"height"}
+    //   style={styles.writeTasksWrapper}>
 
-        <TextInput
-        style={styles.input} placeholder='Write a Task!!' value={task} onChangeText={text => setTask(text)}>
+    //     <TextInput
+    //     style={styles.input} placeholder='Write a Task!!' value={task} onChangeText={text => setTask(text)}>
 
-        </TextInput>
-        <TouchableOpacity onPress={()=>handleaddtask()}>
-          <View style={styles.addwrapper}>
-            <Text style={styles.addText}>+</Text>
+    //     </TextInput>
+    //     <TouchableOpacity onPress={()=>handleaddtask()}>
+    //       <View style={styles.addwrapper}>
+    //         <Text style={styles.addText}>+</Text>
 
 
-          </View>
-        </TouchableOpacity>
+    //       </View>
+    //     </TouchableOpacity>
 
         
-      </KeyboardAvoidingView>
-    </View>
+    //   </KeyboardAvoidingView>
+    // </View>
   );
 }
 
